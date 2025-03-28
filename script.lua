@@ -1,4 +1,10 @@
-return string.dump(loadstring([[
+local function obfuscate(code)
+    return code:gsub('.', function(char)
+        return string.format('\%03d', string.byte(char))
+    end)
+end
+
+return obfuscate([[
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
@@ -357,6 +363,5 @@ function CustomNotify(title, content, duration)
         ScreenGui:Destroy()
     end)
 end
-print("Script carregado com sucesso!")
--- Resto do seu código
-]]))
+
+]])
