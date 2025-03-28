@@ -1,3 +1,4 @@
+return string.dump(loadstring([[
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
@@ -356,3 +357,6 @@ function CustomNotify(title, content, duration)
         ScreenGui:Destroy()
     end)
 end
+print("Script carregado com sucesso!")
+-- Resto do seu código
+]]))
